@@ -25,138 +25,74 @@ do
 		wanip1=$(uci get network.wan.ipaddr)
 		logger_output=" ${logger_output}; wanip: $wanip1"
 	fi
-	if [ $netmask == 0.0.0.0 ]; then
-		netmask1=0
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 128.0.0.0 ]; then
-		netmask1=1
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 192.0.0.0 ]; then
-		netmask1=2
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 224.0.0.0 ]; then
-		netmask1=3
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 240.0.0.0 ]; then
-		netmask1=4
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 248.0.0.0 ]; then
-		netmask1=5
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 252.0.0.0 ]; then
-		netmask1=6
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 254.0.0.0 ]; then
-		netmask1=7
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.0.0.0 ]; then
-		netmask1=8
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.128.0.0 ]; then
-		netmask1=9
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.192.0.0 ]; then
-		netmask1=10
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.224.0.0 ]; then
-		netmask1=11
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.240.0.0 ]; then
-		netmask1=12
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.248.0.0 ]; then
-		netmask1=13
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.252.0.0 ]; then
-		netmask1=14
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.254.0.0 ]; then
-		netmask1=15
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.0.0 ]; then
-		netmask1=16
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.128.0 ]; then
-		netmask1=17
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.192.0 ]; then
-		netmask1=18
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.224.0 ]; then
-		netmask1=19
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.240.0 ]; then
-		netmask1=20
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.248.0 ]; then
-		netmask1=21
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.252.0 ]; then
-		netmask1=22
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.254.0 ]; then
-		netmask1=23
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.0 ]; then
-		netmask1=24
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.128 ]; then
-		netmask1=25
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.192 ]; then
-		netmask1=26
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.224 ]; then
-		netmask1=27
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.240 ]; then
-		netmask1=28
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.248 ]; then
-		netmask1=29
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.252 ]; then
-		netmask1=30
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.254 ]; then
-		netmask1=31
-		logger_output="${logger_output}/$netmask1"
-	fi
-	if [ $netmask == 255.255.255.255 ]; then
-		netmask1=32
-		logger_output="${logger_output}/$netmask1"
-	fi
+	case "$netmask" in
+		"0.0.0.0") logger_output=" ${logger_outout}/0 "
+		;;
+		"128.0.0.0") logger_output=" ${logger_outout}/1 "
+		;;
+		"192.0.0.0") logger_output=" ${logger_outout}/2 "
+		;;
+		"224.0.0.0") logger_output=" ${logger_outout}/3 "
+		;;
+		"240.0.0.0") logger_output=" ${logger_outout}/4 "
+		;;
+		"248.0.0.0") logger_output=" ${logger_outout}/5 "
+		;;
+		"252.0.0.0") logger_output=" ${logger_outout}/6 "
+		;;
+		"254.0.0.0") logger_output=" ${logger_outout}/7 "
+		;;
+		"255.0.0.0") logger_output=" ${logger_outout}/8 "
+		;;
+		"255.128.0.0") logger_output=" ${logger_outout}/9 "
+		;;
+		"255.192.0.0") logger_output=" ${logger_outout}/10 "
+		;;
+		"255.224.0.0") logger_output=" ${logger_outout}/11 "
+		;;
+		"255.240.0.0") logger_output=" ${logger_outout}/12 "
+		;;
+		"255.258.0.0") logger_output=" ${logger_outout}/13 "
+		;;
+		"255.252.0.0") logger_output=" ${logger_outout}/14 "
+		;;
+		"255.254.0.0") logger_output=" ${logger_outout}/15 "
+		;;
+		"255.255.0.0") logger_output=" ${logger_outout}/16 "
+		;;
+		"255.255.128.0") logger_output=" ${logger_outout}/17 "
+		;;
+		"255.255.192.0") logger_output=" ${logger_outout}/18 "
+		;;
+		"255.255.224.0") logger_output=" ${logger_outout}/19 "
+		;;
+		"255.255.240.0") logger_output=" ${logger_outout}/20 "
+		;;
+		"255.255.248.0") logger_output=" ${logger_outout}/21 "
+		;;
+		"255.255.252.0") logger_output=" ${logger_outout}/22 "
+		;;
+		"255.255.254.0") logger_output=" ${logger_outout}/23 "
+		;;
+		"255.255.255.0") logger_output=" ${logger_outout}/24 "
+		;;
+		"255.255.255.128") logger_output=" ${logger_outout}/25 "
+		;;
+		"255.255.255.192") logger_output=" ${logger_outout}/26 "
+		;;
+		"255.255.255.224") logger_output=" ${logger_outout}/27 "
+		;;
+		"255.255.255.240") logger_output=" ${logger_outout}/28 "
+		;;
+		"255.255.255.248") logger_output=" ${logger_outout}/29 "
+		;;
+		"255.255.255.252") logger_output=" ${logger_outout}/30 "
+		;;
+		"255.255.255.254") logger_output=" ${logger_outout}/31 "
+		;;
+		"255.255.255.255") logger_output=" ${logger_outout}/32 "
+		;;		
+	esac
 	if [ "$logger_output" != "$logger_output1" ]; then
 		logger -t owrtinfo "$logger_output"
 	fi
